@@ -7,11 +7,11 @@ def create_note(content: str):
         "content": content
     }
     container.create_item(note)
-return note
+    return note
 
 def get_notes():
     items = list(container.read_items())
     return items
 
 def delete_note(note_id: str):
-    container.delete_item(note_id, partition_key=node_id)
+    container.delete_item(note_id, partition_key=note_id)
